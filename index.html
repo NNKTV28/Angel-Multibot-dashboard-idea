@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Navigation</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="CSS/main.css">
+    <!-- IMPORT BOXICONS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <aside class="close">
+        <div class="head">
+            <div class="logo">
+                <img src="images/AM-icon-no-background.jpg" alt="logo">
+                <h2 class="logo-title">Angel<span>Multibot</span></h2>
+            </div>
+            <i class='bx bx-menu hamburger-menu'></i>
+        </div>
+
+        <div class="nav">
+            <div class="menu active">
+                <i class="bx bx-info-circle"></i>
+                <span>Information</span>
+            </div>
+
+            <div class="menu">
+                <i class="bx bx-terminal"></i>
+                <span>Commands</span>
+            </div>
+
+            <div class="menu">
+                <i class="bx bx-server"></i>
+                <span>Servers</span>
+            </div>
+            
+            <div class="menu">
+                <i class="bx bx-task"></i>
+                <span>Basic</span>
+                <i class="bx bx-chevron-down"></i>
+            </div>
+            <div class="menu-dropdown">
+                <div class="sub-menu">
+                    <span class="menu">General</span>
+                    <span class="menu">Auto Moderation</span>
+                    <span class="menu">Moderation</span>
+                    <span class="menu">Ticket</span>
+                    <span class="menu">Statistics</span>
+                </div>
+            </div>
+
+            <div class="menu">
+                <i class="bx bxs-megaphone"></i>
+                <span>Greeting</span>
+                <i class="bx bx-chevron-down"></i>
+            </div>
+            <div class="menu-dropdown">
+                <div class="sub-menu">
+                    <span class="menu">Welcomer</span>
+                    <span class="menu">Farewell</span>
+                </div>
+            </div>
+
+            <div class="menu">
+                <i class="bx bx-music"></i>
+                <span>Music</span>
+            </div>
+
+            <div class="menu">
+                <i class="bx bx-group"></i>
+                <span>Tiers</span>
+                <i class="bx bx-chevron-down"></i>
+            </div>
+            <div class="menu-dropdown">
+                <div class="sub-menu">
+                    <span class="menu">Free</span>
+                    <span class="menu">Pro</span>
+                    <span class="menu">Lifetime</span>
+                </div>
+            </div>
+
+            <div class="menu">
+                <i class="bx bx-cog"></i>
+                <span>Settings</span>
+            </div>
+
+            <div class="menu" style="pointer-events: none;"></div>
+        </div>
+
+        <div class="foot">
+            <div class="profile">
+                <img src="images/profile.jpg" alt="profile">
+                <div class="info">
+                    <span class="name">NNKtv28</span>
+                    <span class="job">Premium</span>
+                </div>
+            </div>
+
+            <div class="menu menu-logout">
+                <i class="bx bx-log-out"></i>
+                <span>Logout</span>
+            </div>
+        </div>
+
+    </aside>
+
+    <header>
+        <h1>SERVER NAME</h1>
+    </header>
+
+    <main class="main-container">
+        <div class="information-section selected">
+
+        </div>
+        <div class="commands-section">
+
+        </div>
+        <div class="servers-section">
+
+        </div>
+        <div class="servers-basic-section">
+            <div class="basic-general">
+
+            </div>
+            <div class="basic-auto-moderation">
+                
+            </div>
+            <div class="basic-moderation">
+                
+            </div>
+            <div class="basic-ticket">
+                
+            </div>
+            <div class="basic-statistics">
+                
+            </div>
+        </div>
+        <div class="servers-greetings-section">
+
+        </div>
+        <div class="servers-music-section">
+
+        </div>
+        <div class="tiers-section">
+
+        </div>
+        <div class="settings-section">
+
+        </div>
+    </main>
+
+
+    <!-- IMPORT CDNJS JQUERY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="JS/main.js"></script>
+    <script>
+        $('.hamburger-menu').click(function() {
+            $('aside').toggleClass('close')
+        })
+
+        $('.menu').click(function() {
+            $(this).siblings('.menu').removeClass('active')
+            $(this).addClass('active')
+
+            $(this).next().siblings('.menu-dropdown').children('.sub-menu').slideUp()
+            $(this).next('.menu-dropdown').children('.sub-menu').slideToggle()
+
+            $(this).next().siblings('.menu-dropdown').children('.sub-menu').children('.menu').removeClass('active')
+        })
+    </script>
+
+</body>
+</html>
